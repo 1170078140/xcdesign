@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>行川设计-案例</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body>
+	<header class="inner rowBetweenCenter">
+		<div class="logo"><a href="index.html"><img src="./images/logo.png"></a></div>
+		<nav>
+			<ul class="rowBetweenCenter">
+				<li><a href="index.html">首页</a></li>
+				<li><a href="case.html"  class="ac">案例</a></li>
+				<li><a href="about.html">关于我们</a></li>
+				<li><a href="contact.html">联系我们</a></li>
+				<li><a href="english.html">English</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div class="caseWrap aboutBanner">
+		<div class="inner rowBetweenCenter">
+			<div class="text verticalCenter">
+				<h2>SMART<br />THAN<br />YOURSELF</h2>
+				<div><span class="line"></span></div>
+				<p>智能门锁设计</p>
+			</div>
+			<div class="img verticalCenter"><img src="images/img_2.png"/></div>
+			<a href="case.html"></a>
+		</div>
+	</div>
+	<div class="inner">
+		<div class="path"><i></i>您当前的位置：首页  -  <strong>精彩案例</strong></div>
+		<div class="case">
+			<div class="title">精彩案例&nbsp;/&nbsp;<span>Brilliant Cases</span></div>
+			<ul class="casetype rowBetweenCenter">
+				<li class="ac">
+					<div class="picBg"><div class="pic"></div></div>
+					<div><span class="line"></span></div>
+					<h4>消费类电子</h4>
+					<p>Digital Product</p>
+				</li>
+				<li>
+					<div class="picBg"><div class="pic"></div></div>
+					<div><span class="line"></span></div>
+					<h4>智能硬件</h4>
+					<p>SMART DEVICE</p>
+				</li>
+				<li>
+					<div class="picBg"><div class="pic"></div></div>
+					<div><span class="line"></span></div>
+					<h4>医疗器械</h4>
+					<p>medical instruments</p>
+				</li>
+				<li> 
+					<div class="picBg"><div class="pic"></div></div>
+					<div><span class="line"></span></div>
+					<h4>仪器及家电</h4>
+					<p>instruments</p>
+				</li>
+				<li>
+					<div class="picBg"><div class="pic"></div></div>
+					<div><span class="line"></span></div>
+					<h4>其他产品</h4>
+					<p>OTHERS</p>
+				</li>
+			</ul>
+			<div class="caseList">
+				<ul class="cases">
+					<!--<li class="rowBetweenCenter">
+						<div class="num">01</div>
+						<div class="pic"><img src="images/dig_1.png"/></div>
+						<a href="##"></a>
+					</li>
+					<li class="rowBetweenCenter">
+						<div class="pic"><img src="images/dig_2.png"/></div>
+						<div class="num">02</div>
+						<a href="##"></a>
+					</li>
+					<li class="rowBetweenCenter">
+						<div class="num">03</div>
+						<div class="pic"><img src="images/dig_3.png"/></div>
+						<a href="##"></a>
+					</li>
+					<li class="rowBetweenCenter">
+						<div class="pic"><img src="images/dig_4.png"/></div>
+						<div class="num">04</div>
+						<a href="##"></a>
+					</li>-->
+				</ul>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="contactWrap">
+			<div class="inner rowBetweenCenter">
+				<div class="logo2"><a href="index.html"><img src="images/logo2.png"/></a></div>
+				<ul class="rowBetweenCenter nav">
+					<li>
+						<a href="case.html">
+							<span>精彩案例</span><br /><span>OUR CASE</span>
+						</a>
+					</li>
+					<li>
+						<a href="about.html">
+							<span>关于我们</span><br /><span>ABOUT US</span>
+						</a>
+					</li>
+					<li>
+						<a href="contact.html">
+							<span>联系我们</span><br /><span>CONTACT US</span>
+						</a>
+					</li>
+				</ul>
+				<div class="tel">
+					<div><i></i>陈先生：13761642831</div>
+					<div><i></i>E-mail：id@fluxus-design.com</div>
+				</div>
+			</div>
+		</div>
+		<div class="bot"><div id="inner">上海形川工业设计有限公司&nbsp;&nbsp;沪ICP备15031446号</div></div>
+	</footer>	
+	<script>
+		var caseData=[
+			{'id':0,'name':'消费类电子','img':['dig_1.jpg','dig_2.jpg','dig_3.jpg','dig_4.jpg']},
+			{'id':1,'name':'智能硬件','img':['sma_1.jpg','sma_2.jpg','sma_3.png','sma_4.png']},
+			{'id':2,'name':'医疗器械','img':['med_1.jpg','med_2.jpg','med_3.jpg','med_4.jpg']},
+			{'id':3,'name':'仪器及家电','img':['ins_1.jpg','ins_2.jpg','ins_3.jpg','ins_4.jpg']},
+			{'id':4,'name':'其他产品','img':['oth_1.jpg','oth_2.jpg','oth_3.jpg','oth_4.jpg']},
+		]
+		
+		var caseTypes=document.getElementsByClassName('casetype')[0].children;
+		var caseList = document.getElementsByClassName('caseList')[0];
+		var cases = document.getElementsByClassName('cases')[0];
+		
+		//给各个产品分类绑定index属性
+		for(let i=0;i<caseTypes.length;i++){
+			caseTypes[i].setAttribute('data-index',i);
+		}
+		
+		//根据index值，出现对应的内容
+		//IE浏览器不支持ES6新语法，--！
+		/*function getCases(index){
+			console.log(2);
+			var imgs = caseData[index].img;
+			var html='';
+			for(let k=0;k<imgs.length;k++){
+				html+=`<li class="rowBetweenCenter">`
+					if(k%2==0){
+						html+=`<div class="num">0${k+1}</div>
+						<div class="pic"><img src="images/${imgs[k]}"/></div>`;
+					}else{
+						html+=`<div class="pic"><img src="images/${imgs[k]}"/></div>
+						<div class="num">0${k+1}</div>`;
+						
+					}
+				html+=`<a href="##"></a>
+				</li>`
+			}
+			cases.innerHTML=html;
+		}*/
+		function getCases(index){
+			var imgs = caseData[index].img;
+			var html='';
+			for(let k=0;k<imgs.length;k++){
+				var n=k+1;
+				html+='<li class="rowBetweenCenter">'
+					if(k%2==0){
+						html+='<div class="num">0'+n+'</div>'+
+						'<div class="pic"><img src="images/'+imgs[k]+'"/></div>';
+					}else{
+						html+='<div class="pic"><img src="images/'+imgs[k]+'"/></div>'+
+						'<div class="num">0'+n+'</div>';
+						
+					}
+				html+='<a href="##"></a>'+
+				'</li>'
+			}
+			cases.innerHTML=html;
+		}
+		
+		//点击事件
+		for(let j=0;j<caseTypes.length;j++){
+			caseTypes[j].onclick=function(){
+				var index = this.dataset.index;
+				//获取产品信息
+				getCases(index);
+				
+				//固定分类ac样式
+				for(let i=0;i<caseTypes.length;i++){
+					caseTypes[i].classList.remove('ac');
+				}
+				caseTypes[index].className+=' ac';
+			}
+		}
+		
+		//默认加载第一个分类
+		window.onload=function(){
+			getCases(0);
+		}
+		
+	</script>
+</body>
+</html>

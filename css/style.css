@@ -1,0 +1,164 @@
+/* 预设样式  */
+body,div,ul,li,p,h2,h4{margin: 0;padding: 0;}
+ul{list-style: none;}
+a{text-decoration: none;}
+.inner{width: 1140px;margin: 0 auto;}
+.hide{display: none;}
+/*横向分布,水平两端对齐,垂直居中*/
+.rowBetweenCenter{display: flex;flex-direction: row;justify-content: space-between;align-items: center;}
+/*横向分布,间隔相等,垂直居中*/
+.rowAroundCenter{display: flex;flex-direction: row;justify-content: space-around;align-items: center;}
+/*垂直居中*/
+.verticalCenter{display: flex;flex-direction: column;justify-content: center;}
+/*水平居中*/
+.levelCenter{display: flex;flex-direction: row;justify-content: center;}
+/*仅横向分布*/
+.row{display: flex;flex-direction: row;}
+
+/*引入字体*/
+@font-face {
+	font-family: fut;
+	src: url('../fonts/Futura LT Condensed Medium.eot'); 
+	src: url('../fonts/Futura LT Condensed Medium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Futura LT Condensed Medium.woff') format('woff'), 
+         url('../fonts/Futura LT Condensed Medium.ttf')  format('truetype'), 
+         url('../fonts/Futura LT Condensed Medium.svg#YourWebFontName') format('svg'); 
+   }
+   
+@font-face {
+	font-family: fzq;
+	src: url('../fonts/FZQingKeYueSong_GB.eot'); 
+	src: url('../fonts/FZQingKeYueSong_GB.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/FZQingKeYueSong_GB.woff') format('woff'), 
+         url('../fonts/FZQingKeYueSong_GB.ttf')  format('truetype'), 
+         url('../fonts/FZQingKeYueSong_GB.svg#YourWebFontName') format('svg'); 
+   }
+
+/* 页面头部样式 */
+header{height: 114px;}
+.logo{width: 251px;height: 65px;}
+.logo img{width: 251px;height: 65px;}
+nav{height: 100%;}
+nav li{margin: 0 20px;}
+nav a{padding: 0 20px;font-size: 20px;color: #333;font-family: "microsoft yahei";border-bottom: 4px solid #fff;display: inline-block;height: 110px;line-height: 110px;}
+nav .ac,nav a:hover{color: #0ab4fe;border-bottom-color: #0ab4fe;}
+
+/*一、banner图*/
+.banner{width: 100%;height: 650px;position: relative;}
+.banner .img_list{height: 100%;overflow: hidden;width: 1920px;position: absolute;left: 50%;margin-left: -960px;}
+/*分页器*/
+.banner .btn_list{position: absolute;bottom: 28px;width: 100%;}
+.btn_list li{background-color: #fff;margin: 0 15px;width: 15px;height: 15px;border-radius: 50%;cursor: pointer;}
+.btn_list .ac{background-color: #0ab4fe;}
+/*翻页按钮*/
+.banner .inner{height: 100%;position: absolute;top: 0;left: 50%;margin-left: -570px;}
+.banner span{width: 45px;height: 88px;position: absolute;cursor: pointer;background: url(../images/icon_2.png) -190px 0 no-repeat;background-size: cover;}
+.banner .prev{left: -70px;top: 270px;}
+.banner .next{right: -70px;top: 270px;background-position-x: -234px;}
+
+/*二、精彩案例*/
+.main{padding-top: 110px;}
+.block{border-top: 1px solid #0AB4FE;position: relative;height: 490px;}
+/*标题*/
+.titleWrap{position: absolute;top: -40px;left: 50%;margin-left:-150px;background-color: #fff;width: 300px;text-align: center;}
+.titleWrap h2{font-size: 36px;height: 44px;line-height: 44px;color: #333;font-family: "fzq";font-weight: normal;}
+.titleWrap p{font-size: 24px;height: 22px;line-height: 22px;font-family: "microsoft yahei";color: #666;}
+.titleWrap span{display:inline-block;width: 12px;height: 12px;border-radius:50%;border:1px solid #0AB4FE;position: absolute;top:50%}
+.titleWrap span:nth-of-type(1){left: 0;}
+.titleWrap span:nth-of-type(2){right: 0;}
+/*分类*/
+.casetype{width: 100%;padding: 115px 0 140px 0;font-family: "microsoft yahei";text-align: center;}
+.casetype li{position: relative;text-align: center;}
+.casetype .picBg{width: 125px;height: 125px;border-radius: 50%;background-color: #ececec;position: relative;margin-bottom: 24px;display: inline-block;}
+.casetype .pic{width: 100%;height: 100%;background: url(../images/icon_1.png) 0 0  no-repeat;background-position-y: 0;}
+.casetype .line{width: 25px;height: 3px;background-color: #fff;display: inline-block;}
+.casetype h4{font-size: 24px;height: 40px;line-height: 40px;color: #333;font-weight: normal;margin-top: 12px;}
+.casetype p{font-size: 12px;height: 24px;line-height: 24px;color: #838383;text-transform: uppercase;}
+.casetype li a{display: inline-block;width: 100%;height: 100%;position: absolute;left: 0;top:0;display: inline-block;}
+.casetype li:nth-of-type(2) .pic{background-position-x: -125px;}
+.casetype li:nth-of-type(3) .pic{background-position-x: -250px;}
+.casetype li:nth-of-type(4) .pic{background-position-x: -375px;}
+.casetype li:nth-of-type(5) .pic{background-position-x: -500px;}
+/*案例分类悬浮样式*/
+.casetype .ac .line,.casetype li:hover .line{background-color: #0AB4FE;}
+.casetype .ac h4,.casetype .ac p{color: #0AB4FE;}
+.casetype li:hover h4,.casetype li:hover p{color: #0AB4FE;}
+.casetype .ac .pic,.casetype li:hover .pic{background-position-y: -125px;}
+
+/*三个案例板块*/
+.caseWrap{width: 100%;height: 650px;background-color: #f8f8f8;margin-bottom: 15px;}
+.caseWrap .inner{height: 650px;position: relative;}
+.caseWrap h2{font-size: 90px;font-family: fut;font-weight: normal;color: #333;}
+.caseWrap .line{width: 70px;height: 3px;background-color: #0AB4FE;margin-left: 2px;}
+.caseWrap p{font-size: 36px;font-family: "microsoft yahei";color: #666;height: 66px;line-height: 66px;}
+.caseWrap a{display: inline-block;width: 100%;height: 100%;position: absolute;left: 0;top:0;}
+
+/*三、我们的优势*/
+.strength{margin-top: 133px;}
+.strength .picBg{background-color: #fff;border: 4px solid #ececec;text-align: center;line-height: 124px;font-family: fut;font-size: 70px;color: #333;}
+.strength h4{font-family: fzq;}
+.strength li:hover h4{color: #333;}
+.strength li:hover p{color: #666;}
+
+/*四、关于我们*/
+.about{height: 620px;margin-top: 80px;}
+.about li{font-size: 0;}
+
+/*页面底部样式*/
+.contactWrap{width: 100%;height: 190px;background-color: #f8f8f8;}
+.contactWrap .inner{height: 100%;color: #666;}
+.nav li{padding: 0 20px;text-align: center;color: #666;cursor: pointer;}
+.nav li span{display: inline-block;}
+.nav li span:nth-of-type(1){border-bottom: 1px solid #ccc;height: 34px;line-height: 34px;font-size: 18px;font-family: "microsoft yahei";}
+.nav li span:nth-of-type(2){height: 30px;line-height: 30px;font-size: 12px;font-family: "microsoft yahei";text-transform: uppercase;}
+.nav a{color: #666;}
+.nav li:hover a{color: #0AB4FE;}
+.nav li:hover span:nth-of-type(1){border-bottom-color: #0AB4FE;}
+.tel i{display: inline-block;width: 26px;height: 26px;background: url(../images/icon_2.png) -26px 0 no-repeat;margin-right: 10px;vertical-align: -7px;}
+.tel div:nth-of-type(2) i{background-position: -52px 0;}
+.tel>div{height: 26px;line-height: 26px;font-size: 14px;font-family: "microsoft yahei";margin: 10px 0;}
+footer .bot{width: 100%;height: 30px;background-color: #333;text-align: center;color: #9b9b9b;line-height: 30px;font-size: 12px;}
+
+/*========================== 案例页面  =====================================*/
+.aboutBanner{margin-bottom: 0;}
+.path{font-size: 12px;color: #666;padding: 10px 0 30px 0;}
+.path i{display:inline-block;width: 23px;height: 22px;background: url(../images/icon_2.png) 0 0 no-repeat;margin-right: 6px;vertical-align: -5px;}
+.title{font-size: 36px;height: 44px;line-height: 44px;color: #333;font-family: "fzq";font-weight: normal;text-align: center;}
+.title span{font-size: 24px;height: 22px;line-height: 22px;font-family: "microsoft yahei";color: #666;}
+.case .casetype{padding: 78px 0 54px 0;}
+.cases li{margin-bottom: 24px;height: 400px;width: 100%;background-color: #eee;position: relative;}
+.cases a{position: absolute;left: 0;top: 0;width: 100%;height: 100%;}
+.cases .num{font-size: 100px;line-height: 400px;text-align: center;color: #fff;font-family: arial;width: 300px;}
+.cases .pic{font-size: 0;}
+
+/*========================== 关于我们  =====================================*/
+.bannerPic{width: 100%;height: 500px;overflow: hidden;text-align: center;}
+.bannerPic img{height: 100%;display: inline-block;}
+.content .rowAroundCenter{margin: 25px 0 135px 0;}
+.content .title{border-bottom: 1px solid #fff;color: #888;cursor: pointer;font-size: 28px;}
+.content .title span{color: #888;font-size: 20px;}
+.content .ac,.content .title:hover{color: #333;border-bottom-color: #0AB4FE;}
+.content .ac span,.content .title:hover span{color: #666;}
+.mainCon{width: 100%;padding-bottom: 127px;}
+.mainCon>.row{justify-content: space-between;width: 100%;height: 327px;}
+.mainCon .text{width: 53%;height: 100%;padding-right: 8.5%;border-right: 1px solid #0AB4FE;box-sizing: border-box;position: relative;}
+.sTitle{align-items: center;}
+.sTitle div:nth-of-type(1){font-family: arial;font-size: 54px;height: 40px;line-height: 40px;margin-right: 10px;color: #0AB4FE;border-right: 1px solid #0AB4FE;width: 58px;padding-right: 8px;}
+.sTitle div:nth-of-type(2){font-family: "microsoft yahei";color: #333;font-size: 24px;line-height: 30px;}
+.sTitle div:nth-of-type(2) span{color: #666;font-size: 22px;}
+.mainCon p{color: #7f7f7f;font-size: 16px;font-family: "黑体";line-height: 30px;max-height:180px;overflow: hidden;margin-top: 10px;}
+.mainCon i{width: 24px;height: 24px;border: 2px solid #0AB4FE;border-radius: 50%;position: absolute;right: -14px;top: 50%;margin-top: -12px;background-color: #fff;}
+.mainCon .img{width: 38.2%;height: 250px;overflow: hidden;font-size: 0;}
+.mainCon .img img{width: 100%;height: 100%;}
+
+/*========================== 联系我们  =====================================*/
+.contactCon .rowAroundCenter{margin: 25px 0;}
+.contactWays{width: 100%;height: 418px;padding: 0 15px 24px;box-sizing: border-box;border-bottom: 1px solid #ccc;margin-bottom: 24px;}
+.ways{height: 33px;line-height: 33px;font-size: 16px;color: #666;margin: 18px 0;font-family: "microsoft yahei";}
+.ways strong{color: #333;}
+.ways i{display: inline-block;width: 33px;height: 100%;background: url(../images/icon_2.png) -66px -30px no-repeat;margin-right: 15px;vertical-align: -8px;}
+.contactWays .ways:nth-of-type(1) i{background-position-x: 0;}
+.contactWays .ways:nth-of-type(2) i{background-position-x: -33px;}
+#map{width: 100%;height: 710px;margin-bottom: 20px;}
+.BMap_cpyCtrl {display: none;}  
+.anchorBL {display: none;  } 
