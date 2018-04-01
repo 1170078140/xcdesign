@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>形川设计-首页</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
-	<script type="text/javascript" src="http://api.map.baidu.com/getscript?v=3.0&ak=XWtX6UqDs4BsSZWPRaOVQN0rUpA0p55L&services=&t=20180"></script>
-	<script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
-	<link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+	<link rel="stylesheet" type="text/css" href="css/swiper-4.2.0.min.css"/>
 </head>
 <body>
 	<header class="inner rowBetweenCenter">
@@ -22,21 +21,19 @@
 		</nav>
 	</header>
 	<div class="banner">
-		<ul class="img_list levelCenter">
-			<li><a href="case.html?n=1" class="inner"></a><img src="images/banner_1.jpg"/></li>
-			<li style="display:none"><a href="case.html?n=1" class="inner"></a><img src="images/banner_2.jpg"/></li>
-			<li style="display:none"><a href="case.html?n=1" class="inner"></a><img src="images/banner_3.jpg"/></li>
-			<li style="display:none"><a href="about.html?n=1" class="inner"></a><img src="images/banner_4.jpg"/></li>
-		</ul>
-		<div class="inner">
-			<ul class="btn_list levelCenter">
-				<li class="ac"></li>
-				<li></li>
-				<li></li>
-				<li></li>
-			</ul>
-			<span class="u prev"></span>
-			<span class="u next"></span>
+		<div class="swiper-container ">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide"><a href="case.html?n=1" class="inner"></a><img src="images/banner_1.jpg"/></div>
+		        <div class="swiper-slide"><a href="case.html?n=1" class="inner"></a><img src="images/banner_2.jpg"/></div>
+		        <div class="swiper-slide"><a href="case.html?n=1" class="inner"></a><img src="images/banner_3.jpg"/></div>
+		        <div class="swiper-slide"><a href="about.html?n=1" class="inner"></a><img src="images/banner_4.jpg"/></div>
+		    </div>
+	    	<!-- 分页器 -->
+		    <div class="swiper-pagination"></div>
+		    
+		    <!-- 导航按钮 -->
+		    <div class="swiper-button-prev"></div>
+		    <div class="swiper-button-next"></div>
 		</div>
 	</div>
 	<div class="main">
@@ -186,67 +183,23 @@
 		</div>
 		<div class="bot"><div id="inner">上海形川工业设计有限公司&nbsp;&nbsp;沪ICP备15031446号</div></div>
 	</footer>
-	<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+	<script src="js/swiper-4.2.0.min.js" type="text/javascript"></script>
 	<script type="text/javascript">
-		var index=0;
-		var imgnum=$('.img_list li').length;
-		
-		//定时器  默认开启
-		var timer;
-		function scroll(){
-			index++;
-			if(index>=imgnum){
-				index=0;
-			}
-			selectimg(index);
-		}
-		timer =setInterval(scroll,3000);
-		
-		//鼠标进入图片  关闭定时器，出来再开启
-		$('.img_list li').hover(
-			function(){
-				clearInterval(timer);
-			},
-			function(){
-				timer =setInterval(scroll,3000);
-			}
-		);
-		
-		//根据index  出现对应的图
-		function selectimg(index){
-			$('.img_list li').eq(index).fadeIn(600).siblings().fadeOut(600);
-//			$('.img_list li').eq(index).show().siblings().hide();
-			$('.btn_list li').eq(index).addClass('ac').siblings('li').removeClass('ac');
-		}
-		
-		//上一页
-		$('.banner .prev').click(function(){
-			index-=1;
-			if(index<0){
-					index=imgnum-1;
-				}
-			selectimg(index);
-			console.log(index);
-		});
-		
-		//下一页
-		$('.banner .next').click(function(){
-			clearInterval(timer);
-			index+=1;
-			if(index>imgnum-1){
-					index=0;
-				}
-			selectimg(index);
-		});
-		
-		//分页器按钮效果
-		$('.btn_list li').each(function(i){
-			$(this).mouseover(function(){
-			    selectimg(i)
-			    index=i;
-			});
-		});	
-		
+	    var swiper = new Swiper('.swiper-container', {
+	      	loop:true,
+	     	effect: 'fade',
+	      	pagination: {
+	       	 	el: '.swiper-pagination',
+	        	clickable: true,
+	      	},
+	      	navigation: {
+	       	 	nextEl: '.swiper-button-next',
+	        	prevEl: '.swiper-button-prev',
+	      	},
+	      	autoplay:{
+	      		delay:2000
+	      	}	
+	    });
 	</script>
 </body>
 </html>

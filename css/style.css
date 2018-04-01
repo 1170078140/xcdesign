@@ -45,17 +45,20 @@ nav .ac,nav a:hover{color: #0ab4fe;border-bottom-color: #0ab4fe;}
 
 /*一、banner图*/
 .banner{width: 100%;height: 650px;position: relative;}
-.banner .img_list{height: 100%;overflow: hidden;width: 1920px;position: absolute;left: 50%;margin-left: -960px;}
-.banner a{z-index: 2;}
-/*分页器*/
-.banner .btn_list{position: absolute;bottom: -30px;width: 100%;}
-.btn_list li{background-color: #fff;margin: 0 15px;width: 15px;height: 15px;border-radius: 50%;cursor: pointer;border: 1px solid #0AB4FE;}
-.btn_list .ac{background-color: #0ab4fe;}
-/*翻页按钮*/
-.banner .inner{height:90%;position: absolute;top: 0;left: 50%;margin-left: -570px;}
-.banner span{width: 45px;height: 88px;position: absolute;cursor: pointer;background: url(../images/icon_2.png) -190px 0 no-repeat;background-size: cover;}
-.banner .prev{left: -70px;top: 270px;}
-.banner .next{right: -70px;top: 270px;background-position-x: -234px;}
+.banner .swiper-container{width: 100%;height: 100%;overflow: hidden;}
+/*分页器间距*/
+.banner .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {margin: 0 15px;}/*间距*/
+.banner .swiper-container-horizontal > .swiper-pagination-bullets{bottom: 30px;}/*位置*/
+/*分页器大小 样式*/
+.banner .swiper-pagination-bullet{background: #fff;width: 15px;height: 15px;border-radius: 50%;border: 1px solid #0ab4fe;opacity: 1;}
+.banner .swiper-pagination-bullet-active{background-color: #0ab4fe;}
+/*翻页*/
+.banner .swiper-button-prev,.banner .swiper-button-next{width: 45px;height: 88px;background: url(../images/icon_2.png) -190px 0 no-repeat;background-size: cover;}
+.banner .swiper-button-prev{left: 3%;}
+.banner .swiper-button-next{right: 3%;background-position-x: -234px;}
+/*图片以及链接位置*/
+.banner img{position: absolute;left: 50%;top: 0;margin-left: -960px;}
+.banner .swiper-slide a{display: inline-block;width: 1140px;height: 90%;position: absolute;left: 50%;top: 0;margin-left: -570px;z-index: 10;}
 
 /*二、精彩案例*/
 .main{padding-top: 110px;}
@@ -135,8 +138,8 @@ footer .bot{width: 100%;height: 30px;background-color: #333;text-align: center;c
 .cases .pic{font-size: 0;}
 
 /*========================== 关于我们  =====================================*/
-.bannerPic{width: 100%;height: 500px;overflow: hidden;text-align: center;}
-.bannerPic img{height: 100%;display: inline-block;}
+.bannerPic{width: 100%;height: 500px;overflow: hidden;font-size: 0;}
+.bannerPic img{height: 100%;}
 .content .rowAroundCenter{margin: 25px 0 135px 0;}
 .content .title{border-bottom: 1px solid #fff;color: #888;cursor: pointer;font-size: 28px;}
 .content .title span{color: #888;font-size: 20px;}
