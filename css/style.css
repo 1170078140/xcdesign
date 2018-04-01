@@ -49,7 +49,7 @@ nav .ac,nav a:hover{color: #0ab4fe;border-bottom-color: #0ab4fe;}
 .banner a{z-index: 2;}
 /*分页器*/
 .banner .btn_list{position: absolute;bottom: -30px;width: 100%;}
-.btn_list li{background-color: #fff;margin: 0 15px;width: 15px;height: 15px;border-radius: 50%;cursor: pointer;}
+.btn_list li{background-color: #fff;margin: 0 15px;width: 15px;height: 15px;border-radius: 50%;cursor: pointer;border: 1px solid #0AB4FE;}
 .btn_list .ac{background-color: #0ab4fe;}
 /*翻页按钮*/
 .banner .inner{height:90%;position: absolute;top: 0;left: 50%;margin-left: -570px;}
@@ -104,6 +104,7 @@ nav .ac,nav a:hover{color: #0ab4fe;border-bottom-color: #0ab4fe;}
 /*四、关于我们*/
 .about{height: 620px;margin-top: 80px;}
 .about li{font-size: 0;}
+.about a{display: inline-block;height: 100%;}
 
 /*页面底部样式*/
 .contactWrap{width: 100%;height: 190px;background-color: #f8f8f8;}
@@ -121,7 +122,8 @@ nav .ac,nav a:hover{color: #0ab4fe;border-bottom-color: #0ab4fe;}
 footer .bot{width: 100%;height: 30px;background-color: #333;text-align: center;color: #9b9b9b;line-height: 30px;font-size: 12px;}
 
 /*========================== 案例页面  =====================================*/
-.aboutBanner{margin-bottom: 0;}
+.aboutBanner{margin-bottom: 0;height: 500px;overflow: hidden;}
+.aboutBanner .inner{height: 100%;}
 .path{font-size: 12px;color: #666;padding: 10px 0 30px 0;}
 .path i{display:inline-block;width: 23px;height: 22px;background: url(../images/icon_2.png) 0 0 no-repeat;margin-right: 6px;vertical-align: -5px;}
 .title{font-size: 36px;height: 44px;line-height: 44px;color: #333;font-family: "fzq";font-weight: normal;text-align: center;}
@@ -148,7 +150,7 @@ footer .bot{width: 100%;height: 30px;background-color: #333;text-align: center;c
 .sTitle div:nth-of-type(2){font-family: "microsoft yahei";color: #333;font-size: 24px;line-height: 30px;}
 .sTitle div:nth-of-type(2) span{color: #666;font-size: 22px;}
 .mainCon p{color: #7f7f7f;font-size: 16px;font-family: "microsoft yahei";line-height: 30px;max-height:180px;overflow: hidden;margin-top: 10px;}
-.mainCon i{width: 24px;height: 24px;border: 2px solid #0AB4FE;border-radius: 50%;position: absolute;right: -14px;top: 50%;margin-top: -12px;background-color: #fff;}
+.mainCon i{width: 24px;height: 24px;border: 2px solid #0AB4FE;border-radius: 50%;position: absolute;right: -14px;top: 40%;margin-top: -20px;background-color: #fff;}
 .mainCon .img{width: 38.2%;height: 250px;overflow: hidden;font-size: 0;}
 .mainCon .img img{width: 100%;height: 100%;}
 
