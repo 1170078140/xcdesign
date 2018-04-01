@@ -46,12 +46,13 @@ nav .ac,nav a:hover{color: #0ab4fe;border-bottom-color: #0ab4fe;}
 /*一、banner图*/
 .banner{width: 100%;height: 650px;position: relative;}
 .banner .img_list{height: 100%;overflow: hidden;width: 1920px;position: absolute;left: 50%;margin-left: -960px;}
+.banner a{z-index: 2;}
 /*分页器*/
-.banner .btn_list{position: absolute;bottom: 28px;width: 100%;}
+.banner .btn_list{position: absolute;bottom: -30px;width: 100%;}
 .btn_list li{background-color: #fff;margin: 0 15px;width: 15px;height: 15px;border-radius: 50%;cursor: pointer;}
 .btn_list .ac{background-color: #0ab4fe;}
 /*翻页按钮*/
-.banner .inner{height: 100%;position: absolute;top: 0;left: 50%;margin-left: -570px;}
+.banner .inner{height:90%;position: absolute;top: 0;left: 50%;margin-left: -570px;}
 .banner span{width: 45px;height: 88px;position: absolute;cursor: pointer;background: url(../images/icon_2.png) -190px 0 no-repeat;background-size: cover;}
 .banner .prev{left: -70px;top: 270px;}
 .banner .next{right: -70px;top: 270px;background-position-x: -234px;}
@@ -146,7 +147,7 @@ footer .bot{width: 100%;height: 30px;background-color: #333;text-align: center;c
 .sTitle div:nth-of-type(1){font-family: arial;font-size: 54px;height: 40px;line-height: 40px;margin-right: 10px;color: #0AB4FE;border-right: 1px solid #0AB4FE;width: 58px;padding-right: 8px;}
 .sTitle div:nth-of-type(2){font-family: "microsoft yahei";color: #333;font-size: 24px;line-height: 30px;}
 .sTitle div:nth-of-type(2) span{color: #666;font-size: 22px;}
-.mainCon p{color: #7f7f7f;font-size: 16px;font-family: "黑体";line-height: 30px;max-height:180px;overflow: hidden;margin-top: 10px;}
+.mainCon p{color: #7f7f7f;font-size: 16px;font-family: "microsoft yahei";line-height: 30px;max-height:180px;overflow: hidden;margin-top: 10px;}
 .mainCon i{width: 24px;height: 24px;border: 2px solid #0AB4FE;border-radius: 50%;position: absolute;right: -14px;top: 50%;margin-top: -12px;background-color: #fff;}
 .mainCon .img{width: 38.2%;height: 250px;overflow: hidden;font-size: 0;}
 .mainCon .img img{width: 100%;height: 100%;}

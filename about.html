@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>行川设计-关于我们</title>
+	<title>形川设计-关于我们</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
 <body>
@@ -18,12 +18,12 @@
 			</ul>
 		</nav>
 	</header>
-	<div class="bannerPic"><img src="images/banner_2.jpg"/></div>
+	<div class="bannerPic"><img src="images/about_banner.jpg"/></div>
 	<div class="inner">
 		<div class="path"><i></i>您当前的位置：首页  - 关于我们  - <strong>公司介绍</strong></div>
 		<div class="content">
 			<div class="rowAroundCenter">
-				<div class="title ac">公司介绍 &nbsp;/&nbsp;<span>Brand Introduction </span></div>
+				<div class="title ac">公司介绍 &nbsp;/&nbsp;<span>Company Profile </span></div>
 				<div class="title">所获荣誉&nbsp;/&nbsp;<span>Brand Honor</span></div>
 			</div>
 			<div class="mainCon">
@@ -86,16 +86,21 @@
 		</div>
 		<div class="bot"><div id="inner">上海形川工业设计有限公司&nbsp;&nbsp;沪ICP备15031446号</div></div>
 	</footer>
+	<script src="js/fn.js" type="text/javascript"></script>
 	<script type="text/javascript">
+		//1. 关于我们的数据
 		var data=[
 			{'id':0,'name':'关于我们','eName':'About Us','pic':'pic_4.jpg','text':'上海形川工业设计有限公司前身成立于2007年，我们专注工业设计，为各行业提供产品相关的创意服务。在多年的行业积累中，我们用无数的案例验证了实力。始终以创意为先，致力于做行业领先者。2015年，上海形川工业设计有限公司以全新的面貌重新投入运营。工业4.0时代，我们重新出发，继续为新老客户提供最专业的产品设计服务。在创意中提炼设计，在设计中享受创意，我们和时代一起成长。'},
 			{'id':1,'name':'设计业务','eName':'Core Buseness','pic':'pic_5.jpg','text':'形川工业设计的主要业务包括工业设计，UI设计和平面设计三块。我们以市场为源头，通过头脑风暴，创意整合，草图表现,效果图制作等手段一步一步得导出客户所需要的产品方案。并在结构设计，CMF设计上完善后期细节，从点到面得把创新方案完善为实际产品投入市场。形川工业设计提供以产品为核心的附加服务，包括定义企业的识别系统，为企业的产品提炼和发掘家族化基因，运用到新产品设计中。'},
 			{'id':2,'name':'设计团队','eName':'Our Team','pic':'pic_6.jpg','text':'公司的设计团队采用以老带新的梯队式组织结构，其中有来自大企业十年以上工作经验的资深设计师，也有名校毕业创意无限的设计新锐。我们以市场为源头，创意为导向，为客户提供最专业的产品设计以及产品为核心的设计服务。'}
 		];
 		
+		var html='';
+		var mainCon = document.getElementsByClassName('mainCon');
+		var title=document.getElementsByClassName('title');
+		
+		//2. 默认加载关于我们
 		window.onload=function(){
-			var html='';
-			var mainCon = document.getElementsByClassName('mainCon');
 			//填充关于我们的介绍信息
 			/*for(let i=0;i<data.length;i++){
 				html+='<div class="row">
@@ -125,22 +130,34 @@
 						'</div>';
 				}
 			mainCon[0].innerHTML=html;
-			
-			//关于我们和荣誉简介切换
-			var title=document.getElementsByClassName('title');
-			for(let j=0;j<title.length;j++){
-				title[j].index=j;
-				title[j].onclick=function(){
-					for(let k=0;k<title.length;k++){
-						title[k].classList.remove('ac');
-						mainCon[k].className+=' hide';
-					}
-					title[this.index].className+=' ac';
-					mainCon[this.index].classList.remove('hide');
-				}
-			}
 		}
 		
+		//3. 关于我们和荣誉简介切换
+		//3.1  根据参数切换内容的函数，0为关于我们，1为所获荣誉
+		function change(i){
+			for(let k=0;k<title.length;k++){
+				title[k].classList.remove('ac');
+				mainCon[k].className+=' hide';
+			}
+			title[i].className+=' ac';
+			mainCon[i].classList.remove('hide');
+		}
+		
+		//3.2 指定跳转那个页面（传参）
+		var url = window.location.href;
+		var argument = getArgument(url);
+		var index = argument.n;
+		if(index){
+			change(index);
+		}
+		
+		//3.3  标题点击切换
+		for(let j=0;j<title.length;j++){
+			title[j].index=j;
+			title[j].onclick=function(){
+				change(this.index);
+			}
+		}
 		
 	</script>
 </body>
